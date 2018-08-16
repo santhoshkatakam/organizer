@@ -36,7 +36,6 @@ Available Query Commands:
     list_org_units_in_ou_recursive OU_IDENTIFIER
 """
 
-
 import sys
 from docopt import docopt
 from organizer import __version__, orgs, utils
@@ -68,7 +67,7 @@ def jsonfmt(obj):
     return utils.jsonfmt(obj, orgs.OrgObject.dump)
 
 
-def main():
+def main():     # pragma: no cover
     args = docopt(__doc__, version=__version__)
     if len(sys.argv) == 1:
         sys.exit(__doc__)
@@ -100,5 +99,5 @@ def main():
         print(formatter(cmd()))
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':      # pragma: no cover
     main()
